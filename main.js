@@ -58,13 +58,27 @@ function chart(root,telegramData) {
 
      for(let i = 0; i < positionLine.length;i++) {
         const map = positionLine[i]
-        for(let i = 0 ; i <= pos.length;i++) {
+        for(let i = 1 ; i <= pos.length;i++) {
             if(mouse.x > pos[i-1] && mouse.x < pos[i]) {
+                console.log(pos[i-1],pos[i]);
+             if(Math.floor((pos[i] + pos[i-1]) / 2) > mouse.x) {
+                console.log('left');
                 ctx.beginPath();
                 ctx.fillStyle = map.get('color');
                 ctx.arc(pos[i-1], map.get(pos[i-1]), 10, 0, 2 * Math.PI);
                 ctx.fill();
                 ctx.closePath()
+
+             }
+             
+             
+             if(Math.floor((pos[i] + pos[i-1]) / 2) < mouse.x) {
+                ctx.beginPath();
+                ctx.fillStyle = map.get('color');
+                ctx.arc(pos[i], map.get(pos[i]), 10, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.closePath()
+             }
             }
         }
     
