@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+ background-color: rgb(22, 22, 36); 
+}
+.container {
+
+ display: flex;
+ justify-content: center;
+}
+.tg-chart-slider {
+  position: relative;
+  margin-bottom: 1rem;
+  z-index: 1;
+  width: 50%;
+}
+.tg-chart-slider__right, .tg-chart-slider__left {
+  transition: background 0.22s ease-in-out;
+  background:rgb(22, 22, 36);
+  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.tg-chart-slider__left {
+  left: 0;
+}
+.tg-chart-slider__right {
+  right: 0;
+}
+.tg-chart-slider__arrow--left, .tg-chart-slider__arrow--right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transition: background 0.22s ease-in-out;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+.tg-chart-slider__arrow--left {
+  right: 0;
+  cursor: w-resize;
+}
+.tg-chart-slider__arrow--right {
+  left: 0;
+  cursor: e-resize;
+}
+.tg-chart-slider__arrow--right svg ,.tg-chart-slider__arrow--left svg {
+  width: 20px;
+ fill: rgb(22, 22, 36);
+}
+.tg-chart-slider__window {
+  position: absolute;
+  background: transparent;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  top: 0;
+  bottom: 0;
+}
