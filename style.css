@@ -4,14 +4,13 @@
   box-sizing: border-box;
 }
 
-
-body{
- background-color: rgb(22, 22, 36); 
+body {
+  background-color: rgb(22, 22, 36);
 }
 .container {
-
- display: flex;
- justify-content: center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 .tg-chart-slider {
   position: relative;
@@ -19,9 +18,10 @@ body{
   z-index: 1;
   width: 50%;
 }
-.tg-chart-slider__right, .tg-chart-slider__left {
+.tg-chart-slider__right,
+.tg-chart-slider__left {
   transition: background 0.22s ease-in-out;
-  background:rgb(22, 22, 36);
+  background: rgb(22, 22, 36);
   opacity: 0.9;
   position: absolute;
   top: 0;
@@ -33,7 +33,8 @@ body{
 .tg-chart-slider__right {
   right: 0;
 }
-.tg-chart-slider__arrow--left, .tg-chart-slider__arrow--right {
+.tg-chart-slider__arrow--left,
+.tg-chart-slider__arrow--right {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -50,9 +51,10 @@ body{
   left: 0;
   cursor: e-resize;
 }
-.tg-chart-slider__arrow--right svg ,.tg-chart-slider__arrow--left svg {
+.tg-chart-slider__arrow--right svg,
+.tg-chart-slider__arrow--left svg {
   width: 20px;
- fill: rgb(22, 22, 36);
+  fill: rgb(22, 22, 36);
 }
 .tg-chart-slider__window {
   position: absolute;
@@ -61,4 +63,48 @@ body{
   border-bottom: 1px solid #ccc;
   top: 0;
   bottom: 0;
+}
+
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  width: 100px;
+  height: 55px;
+  background: grey;
+  display: block;
+  border-radius: 50px;
+  position: relative;
+}
+
+label .line {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 45px;
+  padding: 10px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 45px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background:rgb(54, 54, 102) ;
+}
+
+input:checked + label .line {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active .line {
+  width: 65px;
 }
