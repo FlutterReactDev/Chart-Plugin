@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "commit": "cz",
+    "cz": "cz",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
